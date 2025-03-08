@@ -6,8 +6,8 @@ A comprehensive checklist to guide development from start to finish. Check off i
 
 ## 1. Project Foundations
 
-- [ ] **Initialize Git Repository**
-  - [ ] Create a new Git repository (e.g., on GitHub or GitLab)
+- [x] **Initialize Git Repository**
+  - [x] Create a new Git repository (e.g., on GitHub or GitLab)
   - [x] Add a `.gitignore` for Node, frontend, environment files, etc.
   - [x] Write a basic `README.md`
 
@@ -23,16 +23,16 @@ A comprehensive checklist to guide development from start to finish. Check off i
 
 ## 2. Database & Models
 
-- [ ] **MongoDB Connection**
-  - [ ] Add a `db.js` or `database.js` to handle Mongoose connection
-  - [ ] Load `MONGO_URI` from `.env`
+- [x] **MongoDB Connection**
+  - [x] Add a `db.js` or `database.js` to handle Mongoose connection
+  - [x] Load `MONGO_URI` from `.env`
 
 - [ ] **Mongoose Schemas**
-  - [ ] **User**: `name`, `email`, `password`, `role`
-  - [ ] **MenuItem**: `name`, `description`, `price`, `availability`, possible translations
-  - [ ] **Restaurant**: `name`, `location`, array of `tables`
-  - [ ] **TableAssignment**: `tableNumber`, `waiterId`
-  - [ ] Validate fields (e.g., price >= 0)
+  - [x] **User**: `name`, `email`, `password`, `role`
+  - [x] **MenuItem**: `name`, `description`, `price`, `availability`, possible translations
+  - [x] **Restaurant**: `name`, `location`, array of `tables`
+  - [x] **TableAssignment**: `tableNumber`, `waiterId`
+  - [x] Validate fields (e.g., price >= 0)
 
 - [ ] **Seed Data (Optional)**
   - [ ] Add test seeds or initial data for local dev/testing
