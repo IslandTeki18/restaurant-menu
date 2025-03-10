@@ -1,16 +1,17 @@
-const { Client, Environment } = require("square");
+const { SquareClient } = require("square");
 const MenuItem = require("../models/MenuItem");
 const { translateMenuItem } = require("./translationService");
 require("dotenv").config();
 
-const client = new Client({
+const client = new SquareClient({
   accessToken: process.env.SQUARE_ACCESS_TOKEN,
-  environment: Environment.Production,
 });
 
 const fetchSquareMenu = async () => {
   try {
-    const { result } = await client.catalogApi.listCatalog(undefined, "ITEM");
+    const { result } = await client.catalogApi.listCatalog({
+      types: "ITEM",
+    });
     return result.objects;
   } catch (error) {
     console.error(error);

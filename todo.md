@@ -27,7 +27,7 @@ A comprehensive checklist to guide development from start to finish. Check off i
   - [x] Add a `db.js` or `database.js` to handle Mongoose connection
   - [x] Load `MONGO_URI` from `.env`
 
-- [ ] **Mongoose Schemas**
+- [x] **Mongoose Schemas**
   - [x] **User**: `name`, `email`, `password`, `role`
   - [x] **MenuItem**: `name`, `description`, `price`, `availability`, possible translations
   - [x] **Restaurant**: `name`, `location`, array of `tables`
@@ -42,13 +42,13 @@ A comprehensive checklist to guide development from start to finish. Check off i
 
 ## 3. Authentication & Role-Based Access
 
-- [ ] **JWT Implementation**
-  - [ ] `/auth/register` route to create new users, hash passwords
-  - [ ] `/auth/login` route to verify credentials and issue JWT
+- [x] **JWT Implementation**
+  - [x] `/auth/register` route to create new users, hash passwords
+  - [x] `/auth/login` route to verify credentials and issue JWT
 
-- [ ] **Middleware**
-  - [ ] `authMiddleware.js` to verify tokens for protected routes
-  - [ ] `roleMiddleware.js` to enforce roles (e.g., Admin, Waiter)
+- [x] **Middleware**
+  - [x] `authMiddleware.js` to verify tokens for protected routes
+  - [x] `roleMiddleware.js` to enforce roles (e.g., Admin, Waiter)
 
 - [ ] **Testing Auth**
   - [ ] Use Postman/Insomnia to confirm register/login flows

@@ -4,7 +4,9 @@
   "description": "A Node.js application using Express",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "nodemon index.js",
+    "data:import": "node src/utils/seeder",
+    "data:destroy": "node src/utils/seeder -d"
   },
   "dependencies": {
     "bcryptjs": "^3.0.2",
@@ -16,5 +18,8 @@
     "square": "^41.0.0"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
 }

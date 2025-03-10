@@ -10,11 +10,6 @@ connectDB();
 // Middleware
 app.use(express.json());
 
-// Import models
-const User = require("./src/models/User");
-const MenuItem = require("./src/models/MenuItem");
-const Restaurant = require("./src/models/Restaurant");
-const TableAssignment = require("./src/models/TableAssignment");
 const authRoutes = require("./src/routes/auth");
 const menuRoutes = require("./src/routes/menu");
 const squareRoutes = require("./src/routes/square");

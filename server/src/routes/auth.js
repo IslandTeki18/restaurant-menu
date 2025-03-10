@@ -13,7 +13,7 @@ router.post("/register", async (req, res) => {
   try {
     let user = await User.findOne({ email });
     if (user) {
-      return res.status(400).json({ msg: "User already exists" });
+      return res.status(400).json({ msg: "Email is already being used." });
     }
 
     user = new User({
@@ -46,7 +46,7 @@ router.post("/register", async (req, res) => {
     );
   } catch (err) {
     console.error(err.message);
-    res.status(500).send("Server error");
+    res.status(500).json({ msg: "Server error", error: err.message });
   }
 });
 
@@ -83,7 +83,7 @@ router.post("/login", async (req, res) => {
     );
   } catch (err) {
     console.error(err.message);
-    res.status(500).send("Server error");
+    res.status(500).json({ msg: "Server error", error: err.message });
   }
 });
 
