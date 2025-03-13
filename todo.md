@@ -50,9 +50,9 @@ A comprehensive checklist to guide development from start to finish. Check off i
   - [x] `authMiddleware.js` to verify tokens for protected routes
   - [x] `roleMiddleware.js` to enforce roles (e.g., Admin, Waiter)
 
-- [ ] **Testing Auth**
-  - [ ] Use Postman/Insomnia to confirm register/login flows
-  - [ ] Confirm role-based access control works (401 if unauthorized)
+- [x] **Testing Auth**
+  - [x] Use Postman to confirm register/login flows
+  - [x] Confirm role-based access control works (401 if unauthorized)
 
 ---
 

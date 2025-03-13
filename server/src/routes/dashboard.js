@@ -1,18 +1,18 @@
 const express = require("express");
 const authMiddleware = require("../middleware/authMiddleware");
-const  roleMiddleware  = require("../middleware/roleMiddleware");
+const roleMiddleware = require("../middleware/roleMiddleware");
 const TableAssignment = require("../models/TableAssignment");
 
 const router = express.Router();
 
 // GET /dashboard/waiter - Get assigned tables for the logged-in waiter
 router.get(
-  "/waiter",
+  "/waiter/:waiter_id",
   authMiddleware,
   roleMiddleware("waiter"),
   async (req, res) => {
     try {
-      const tables = await TableAssignment.find({ waiterId: req.user.id });
+      const tables = await TableAssignment.find({ waiterId: req.params.waiter_id});
       res.json(tables);
     } catch (err) {
       console.error(err.message);
@@ -31,6 +31,7 @@ router.post(
 
     try {
       let table = await TableAssignment.findOne({ tableNumber });
+
       if (table) {
         return res.status(400).json({ msg: "Table already assigned" });
       }
@@ -44,14 +45,14 @@ router.post(
       res.json(table);
     } catch (err) {
       console.error(err.message);
-      res.status(500).send("Server error");
+      res.status(500).json({ msg: "Server error", error: err.message });
     }
   }
 );
 
 // POST /dashboard/waiter/release - Release a table
 router.post(
-  "/waiter/release",
+  "/waiter/:waiter_id/release",
   authMiddleware,
   roleMiddleware("waiter"),
   async (req, res) => {
